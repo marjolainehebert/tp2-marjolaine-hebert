@@ -40,15 +40,20 @@ var tabHospitalisations = [
 ]
 
 function listerPatients(){
-    var prop, patient;
-    var afficheTableau=document.getElementById("afficheTableau");
-    afficheTableau='<table class="w3-table-all w3-hoverable w3-responsive"><tr><th></th></tr>';
+    var prop, patient, tableauPatient;
+    tableauPatient = '<table class="w3-table-all w3-hoverable centrer-tableau"><tr><th>No. dossier</th><th>Nom</th><th>Prenom</th><th>Date de naissance</th><th>Sexe</th></tr>';
     for (patient of tabPatients) {//for(i=0;i<tabEmployes.length;i++)
+        tableauPatient = tableauPatient + "<tr>";
         for (prop in patient) {
             //alert("Le " + prop + " est " + patient[prop]);
+            tableauPatient = tableauPatient + "<td>" + patient[prop] + "</td>";
         }
+        tableauPatient = tableauPatient + "</tr>";
     }
-
+    tableauPatient = tableauPatient + "</table>";
+    document.getElementById("afficheTableau").innerHTML = tableauPatient;
+    document.getElementById("btnEffacer").className="visible";
+    document.getElementById("champStatus").innerHTML = "Liste de tous les patients enregistr&eacute;s";
 }
 
 function listerEtablissements(){
@@ -65,4 +70,9 @@ function selHosParPatients(){
 
 function selHosParEtab(){
     
+}
+
+function effacer(){
+    document.getElementById("afficheTableau").innerHTML = "";
+    document.getElementById("btnEffacer").className="invisible";
 }

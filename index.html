@@ -8,8 +8,8 @@
 
         <!-- Feuilles de styles -->
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
         
         <!-- Scripts -->
         <script src="https://kit.fontawesome.com/822376347b.js" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
                 </div>
             </header>
             
-            <nav class="navbar">
+            <nav id="navbar" class="navbar">
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="javascript:;" onclick="listerPatients()">
@@ -66,15 +66,43 @@
             </nav>
 
             <section>
-                <div id="afficheTableau" class="centrer-tableau w3-responsive">
+                <div id="afficheTableau" class="w3-responsive">
 
+                </div>
+                <div id="btnEffacer" class="invisible">
+                    <div  class="align-center mt-sm">
+                        <a href="#" role="button" onclick="effacer()" class="btn btn-primary-outline">Effacer</a>
+                    </div>
                 </div>
             </section>
 
             <footer>
-                <div class="status"><h4>Status</h4></div>
+                <div class="status"><h6>Status</h6></div>
                 <div id="champStatus">Messages importants</div>
             </footer>
         </div>
+
+
+
+
+
+
+        <!-- sticky nav -->
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+            </script>
+
+
     </body>
 </html>
