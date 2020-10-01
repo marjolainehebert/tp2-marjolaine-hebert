@@ -38,41 +38,86 @@ var tabHospitalisations = [
     {"codeEtab":4177,"noDossierPatient":3,"dateAdmission":"02-fév.-02","dateSortie":"23-fév.-02","specialite":"orthopédie"},
     {"codeEtab":7306,"noDossierPatient":2,"dateAdmission":"23-mai-98","dateSortie":"27-mai-98","specialite":"orthopédie"}
 ]
+/* variables globales */
+var divEntete;
 
+
+
+/* ---------- Lister les patients ---------- */
 function listerPatients(){
     var prop, patient, tableauPatient;
+    divEntete='<i class="fas fa-hospital-user"></i> Liste des patients';
     tableauPatient = '<table class="w3-table-all w3-hoverable centrer-tableau"><tr><th>No. dossier</th><th>Nom</th><th>Prenom</th><th>Date de naissance</th><th>Sexe</th></tr>';
-    for (patient of tabPatients) {//for(i=0;i<tabEmployes.length;i++)
-        tableauPatient = tableauPatient + "<tr>";
-        for (prop in patient) {
-            //alert("Le " + prop + " est " + patient[prop]);
-            tableauPatient = tableauPatient + "<td>" + patient[prop] + "</td>";
+    for (patient of tabPatients) {//pour chaque objet du tableau
+        tableauPatient = tableauPatient + "<tr>"; //ajouter <tr> pour commencer une ligne de tableau
+        for (prop in patient) { // pour chaque élément dans l'objet patient
+            tableauPatient = tableauPatient + "<td>" + patient[prop] + "</td>"; //ajouter une cellule avec
         }
         tableauPatient = tableauPatient + "</tr>";
     }
     tableauPatient = tableauPatient + "</table>";
+    document.getElementById("entete").className="visible";
+    document.getElementById("enteteTitre").innerHTML = divEntete;
     document.getElementById("afficheTableau").innerHTML = tableauPatient;
-    document.getElementById("btnEffacer").className="visible";
     document.getElementById("champStatus").innerHTML = "Liste de tous les patients enregistr&eacute;s";
 }
 
+
+/* ---------- Lister les établissements ---------- */
 function listerEtablissements(){
-    
+    var prop, etab, tableauEtablissement;
+    divEntete='<i class="far fa-hospital"></i> Liste des &eacute;tablissements';
+    tableauEtablissement = '<table class="w3-table-all w3-hoverable centrer-tableau"><tr><th> No. &eacute;tablissement</th><th>Nom</th><th>Adresse</th><th>Code Postal</th><th>Téléphone</th></tr>';
+    for (etab of tabEtablissements) {
+        tableauEtablissement = tableauEtablissement + "<tr>";
+        for (prop in etab) {
+            tableauEtablissement = tableauEtablissement + "<td>" + etab[prop] + "</td>";
+        }
+        tableauEtablissement = tableauEtablissement + "</tr>";
+    }
+    tableauEtablissement = tableauEtablissement + "</table>";
+    document.getElementById("entete").className="visible";
+    document.getElementById("enteteTitre").innerHTML = divEntete;
+    document.getElementById("afficheTableau").innerHTML = tableauEtablissement;
+    document.getElementById("champStatus").innerHTML = "Liste de tous nos &eacute;tablissements";
 }
 
+
+/* ---------- Lister les hospitalisations ---------- */
 function listerHospitalisations(){
-    
+    var prop, hospitalisations, tableauHospitalisations;
+    divEntete='<i class="fas fa-ambulance"></i> Liste des hospitalisations';
+    tableauHospitalisations = '<table class="w3-table-all w3-hoverable centrer-tableau"><tr><th> No. &eacute;tablissement</th><th>Nom</th><th>Adresse</th><th>Code Postal</th><th>Téléphone</th></tr>';
+    for (hospitalisations of tabHospitalisations) {
+        tableauHospitalisations = tableauHospitalisations + "<tr>";
+        for (prop in hospitalisations) {
+            tableauHospitalisations = tableauHospitalisations + "<td>" + hospitalisations[prop] + "</td>";
+        }
+        tableauHospitalisations = tableauHospitalisations + "</tr>";
+    }
+    tableauHospitalisations = tableauHospitalisations + "</table>";
+    document.getElementById("entete").className="visible";
+    document.getElementById("enteteTitre").innerHTML = divEntete;
+    document.getElementById("afficheTableau").innerHTML = tableauHospitalisations;
+    document.getElementById("champStatus").innerHTML = "Liste de tous nos &eacute;tablissements";
+    //{"noEtab":1234,"nomEtab":"Centre hospitalier Sud","adresseEtab":"1234, Boul. Sud, Montréal, Qc","postalEtab":"H2M 2Y6","telEtab":"(514) 123-1234"},
 }
 
 function selHosParPatients(){
+    divEntete='<i class="fas fa-ambulance"></i> Hospitalisatons par patients';
+    document.getElementById("entete").className="visible";
+    document.getElementById("enteteTitre").innerHTML = divEntete;
     
 }
 
 function selHosParEtab(){
+    divEntete='<i class="fas fa-ambulance"></i> Hospitalisation par &eacute;tablissement et par sp&eacute;cialité&eacute;';
+    document.getElementById("entete").className="visible";
+    document.getElementById("enteteTitre").innerHTML = divEntete;
     
 }
 
 function effacer(){
     document.getElementById("afficheTableau").innerHTML = "";
-    document.getElementById("btnEffacer").className="invisible";
+    document.getElementById("entete").className="invisible";
 }
