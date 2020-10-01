@@ -9,6 +9,7 @@
         <!-- Feuilles de styles -->
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         
         <!-- Scripts -->
         <script src="https://kit.fontawesome.com/822376347b.js" crossorigin="anonymous"></script>
@@ -32,31 +33,31 @@
             <nav class="navbar">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" onclick="listerPatients()">
                                 <div class="nav-icon"><i class="fas fa-hospital-user"></i></div>
                                 <div class="nav-texte">Liste des patients</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" onclick="listerEtablissements()">
                                 <div class="nav-icon"><i class="far fa-hospital"></i> </div>
                                 <div class="nav-texte">Liste des établissements</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" onclick="listerHospitalisations()">
                                 <div class="nav-icon"><i class="fas fa-ambulance"></i></div>
                                 <div class="nav-texte">Liste des hospitalisations</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" onclick="selHosParPatients()">
                                 <div class="nav-icon"><i class="fas fa-procedures"></i> </div>
                                 <div class="nav-texte">Hospitalisation par patients</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" onclick="selHosParEtab()">
                                 <div class="nav-icon"><i class="fas fa-clinic-medical"></i></div>
                                 <div class="nav-texte">Hospitalisation par établissement et par spécialité</div>
                             </a>
@@ -64,11 +65,15 @@
                   </ul>
             </nav>
 
-            <section>section</section>
+            <section>
+                <div id="afficheTableau" class="centrer-tableau w3-responsive">
+
+                </div>
+            </section>
 
             <footer>
                 <div class="status"><h4>Status</h4></div>
-                <div id="champStatus">Message important</div>
+                <div id="champStatus">Messages importants</div>
             </footer>
         </div>
     </body>

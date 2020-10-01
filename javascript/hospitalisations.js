@@ -1,3 +1,4 @@
+// Tableau d'objets pour les patients  
 var tabPatients = [
     {"Dossier":1,"Nom":"Léger","Prénom":"Émile","Naissance":"26 mars 1917","Sexe":"M"},
     {"Dossier":2,"Nom":"Bernard","Prénom":"Marie","Naissance":"3 fécrier 1946","Sexe":"F"},
@@ -11,6 +12,7 @@ var tabPatients = [
     {"Dossier":10,"Nom":"Chartrand","Prénom":"Mario","Naissance":"23 juillet 1947","Sexe":"M"}
 ]
 
+// Tableau d'objets pour les établissements
 var tabEtablissements = [
     {"noEtab":1234,"nomEtab":"Centre hospitalier Sud","adresseEtab":"1234, Boul. Sud, Montréal, Qc","postalEtab":"H2M 2Y6","telEtab":"(514) 123-1234"},
     {"noEtab":2346,"nomEtab":"Hôpital Nord","adresseEtab":"7562, rue du Souvenir, Nordville, Qc","postalEtab":"J4R 2Z5","telEtab":"(514) 222-3333"},
@@ -20,6 +22,7 @@ var tabEtablissements = [
     {"noEtab":8895,"nomEtab":"Dernier recours","adresseEtab":"999, rue St-Pierre, Longueuil, Qc","postalEtab":"H4J 1C5","telEtab":"(514) 338-2222"}
 ]
 
+// Tableau d'objets pour hospitalisations
 var tabHospitalisations = [
     {"codeEtab":1234,"noDossierPatient":5,"dateAdmission":"14-août-00","dateSortie":"14-août-01","specialite":"médecine"},
     {"codeEtab":1234,"noDossierPatient":10,"dateAdmission":"12-déc.-92","dateSortie":"12-déc.-92","specialite":"chirurgie"},
@@ -35,3 +38,31 @@ var tabHospitalisations = [
     {"codeEtab":4177,"noDossierPatient":3,"dateAdmission":"02-fév.-02","dateSortie":"23-fév.-02","specialite":"orthopédie"},
     {"codeEtab":7306,"noDossierPatient":2,"dateAdmission":"23-mai-98","dateSortie":"27-mai-98","specialite":"orthopédie"}
 ]
+
+function listerPatients(){
+    var prop, patient;
+    var afficheTableau=document.getElementById("afficheTableau");
+    afficheTableau='<table class="w3-table-all w3-hoverable w3-responsive"><tr><th></th></tr>';
+    for (patient of tabPatients) {//for(i=0;i<tabEmployes.length;i++)
+        for (prop in patient) {
+            //alert("Le " + prop + " est " + patient[prop]);
+        }
+    }
+
+}
+
+function listerEtablissements(){
+    
+}
+
+function listerHospitalisations(){
+    
+}
+
+function selHosParPatients(){
+    
+}
+
+function selHosParEtab(){
+    
+}

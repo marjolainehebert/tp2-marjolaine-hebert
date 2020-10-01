@@ -4,6 +4,10 @@
 /* Google fonts - Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap');
 
+/* ------------ styles de tableaux de W3School ------------ */
+
+
+
 /* ------------ mise en forme du site ------------ */
 body{
     margin:0; 
@@ -109,13 +113,22 @@ nav{
     background-color:#0a9381;
     padding:3rem;
 }
-.navbar{border-radius:0; margin-bottom:0;}
+.navbar{
+    border-radius:0; 
+    margin-bottom:0;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+}
 .navbar-nav{
     width:100%;
+    max-width: 1300px;
     display:flex;
     justify-content: space-evenly;
 }
-.navbar-nav > li{width:18%;}
+.navbar-nav > li{
+    width:18%;
+}
 .navbar-nav > li > a{
     text-align:center;
     color:#01f4c6;
@@ -155,7 +168,11 @@ section{
     background-position:center bottom;
     background-repeat: no-repeat;
 }
-
+.centrer-tableau{
+    transition:0.4s;
+    margin-left:auto; 
+    margin-right:auto;
+}
 
 
 /* ------------ Footer ------------ */
