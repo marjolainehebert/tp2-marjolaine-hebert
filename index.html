@@ -78,9 +78,24 @@
                     </div>
                 </div>
 
-                <div id="afficheTableau" class="w3-responsive">
-
+                <!-- Select patient -->
+                <div id="selectionPatient" class="invisible">
+                    <div class="align-center">
+                        <h5>Sélectionnez un patient</h5>
+                        <select id="selectPatient" class="align-center" onchange="afficherInfosDuPatient(this)"></select>
+                    </div>
                 </div>
+
+                <div id="selectEtabSpecialite" class="invisible">
+                    <div class="align-center">
+                        <select id="selectEtablissement" class="mr-lg" onchange="remplirSpecialites(this)"></select>
+                        <select id="selectSpecialite" class="invisible" onchange="afficherTableauParSpecialites()"></select>
+                    </div>
+                </div>
+
+                <!-- DIV Afficher les tableaux -->
+                <div id="afficheTableau" class="w3-responsive"></div>
+                
             </section>
 
             <footer>
