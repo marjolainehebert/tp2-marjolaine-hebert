@@ -80,16 +80,16 @@
 
                 <!-- Select patient -->
                 <div id="selectionPatient" class="invisible">
-                    <div class="align-center">
+                    <div class="align-center mb-md">
                         <h5>Sélectionnez un patient</h5>
                         <select id="selectPatient" class="align-center" onchange="afficherInfosDuPatient(this)"></select>
                     </div>
                 </div>
 
                 <div id="selectEtabSpecialite" class="invisible">
-                    <div class="align-center">
-                        <select id="selectEtablissement" class="mr-lg" onchange="remplirSpecialites(this)"></select>
-                        <select id="selectSpecialite" class="invisible" onchange="afficherTableauParSpecialites()"></select>
+                    <div class="align-center mb-md">
+                        <select id="selectEtablissement" class="mr-lg ml-lg" onchange="remplirSpecialites(this)"></select>
+                        <select id="selectSpecialite" class="invisible" onchange="afficherTableauParSpecialites(this)"></select>
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@
             </section>
 
             <footer>
-                <div class="status"><h6>Status</h6></div>
+                <div class="status"><h6>Messages</h6></div>
                 <div id="champStatus">Messages importants</div>
             </footer>
         </div>

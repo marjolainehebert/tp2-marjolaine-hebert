@@ -14,7 +14,7 @@ var tabPatients = [
 
 // Tableau d'objets pour les établissements
 var tabEtablissements = [
-    {"codeEtab":1234,"nomEtab":"Centre hospitalier Sud","adresseEtab":"1234, Boul. Sud, Montréal, Qc","postalEtab":"H2M 2Y6","telEtab":"(514) 123-1234"},
+    {"codeEtab":1230,"nomEtab":"Centre hospitalier Sud","adresseEtab":"1234, Boul. Sud, Montréal, Qc","postalEtab":"H2M 2Y6","telEtab":"(514) 123-1234"},
     {"codeEtab":1234,"nomEtab":"Centre hospitalier de St. Mary","adresseEtab":"3830, avenue Lacombe Montréal, Qc","postalEtab":"H3T 1M5","telEtab":"(514) 345-3511"},
     {"codeEtab":2346,"nomEtab":"Hôpital Saint-Luc du CHUM","adresseEtab":"1058, rue Saint-Denis, Montréal, Qc","postalEtab":"H2X 3J4","telEtab":"(514) 890-8000"},
     {"codeEtab":3980,"nomEtab":"Hôpital Santa Cabrini","adresseEtab":"5655, rue Saint-Zotique Est Montréal,Qc","postalEtab":"H1T 1P7","telEtab":"(514) 252-6000"},
@@ -26,28 +26,39 @@ var tabEtablissements = [
 
 // Tableau d'objets pour hospitalisations
 var tabHospitalisations = [
-    {"codeEtab":1234,"Dossier":5,"dateAdmission":"14-août-00","dateSortie":"14-août-01","spécialité":"médecine"},
-    {"codeEtab":1234,"Dossier":10,"dateAdmission":"12-déc.-92","dateSortie":"12-déc.-92","spécialité":"chirurgie"},
-    {"codeEtab":2346,"Dossier":8,"dateAdmission":"03-mars-03","dateSortie":"05-mars-03","spécialité":"médecine"},
-    {"codeEtab":2346,"Dossier":1,"dateAdmission":"11-nov.-97","dateSortie":"12-nov.-97","spécialité":"orthopédie"},
-    {"codeEtab":2346,"Dossier":3,"dateAdmission":"12-avr.-95","dateSortie":"30-avr.-95","spécialité":"médecine"},
-    {"codeEtab":3980,"Dossier":5,"dateAdmission":"14-fév.-00","dateSortie":"14-mars-00","spécialité":"médecine"},
-    {"codeEtab":3980,"Dossier":5,"dateAdmission":"01-jan.-01","dateSortie":"01-fév.-01","spécialité":"médecine"},
-    {"codeEtab":3980,"Dossier":9,"dateAdmission":"03-avr.-95","dateSortie":"08-avr.-95","spécialité":"orthopédie"},
-    {"codeEtab":3980,"Dossier":7,"dateAdmission":"27-nov.-99","dateSortie":"04-déc.-99","spécialité":"chirurgie"},
-    {"codeEtab":3980,"Dossier":10,"dateAdmission":"28-avr.-97","dateSortie":"05-mai-97","spécialité":"chirurgie"},
-    {"codeEtab":4177,"Dossier":3,"dateAdmission":"03-août-01","dateSortie":"05-déc.-01","spécialité":"médecine"},
-    {"codeEtab":4177,"Dossier":3,"dateAdmission":"02-fév.-02","dateSortie":"23-fév.-02","spécialité":"orthopédie"},
-    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23-mai-98","dateSortie":"27-mai-98","spécialité":"orthopédie"}
+    {"codeEtab":1234,"Dossier":5,"dateAdmission":"14-août-00","dateSortie":"14-août-01","spécialité":"Médecine"},
+    {"codeEtab":1234,"Dossier":10,"dateAdmission":"12-déc.-92","dateSortie":"12-déc.-92","spécialité":"Chirurgie"},
+    {"codeEtab":2346,"Dossier":8,"dateAdmission":"03-mars-03","dateSortie":"05-mars-03","spécialité":"Médecine"},
+    {"codeEtab":2346,"Dossier":1,"dateAdmission":"11-nov.-97","dateSortie":"12-nov.-97","spécialité":"Orthopédie"},
+    {"codeEtab":2346,"Dossier":3,"dateAdmission":"12-avr.-95","dateSortie":"30-avr.-95","spécialité":"Médecine"},
+    {"codeEtab":3980,"Dossier":5,"dateAdmission":"14-fév.-00","dateSortie":"14-mars-00","spécialité":"Médecine"},
+    {"codeEtab":3980,"Dossier":5,"dateAdmission":"01-jan.-01","dateSortie":"01-fév.-01","spécialité":"Médecine"},
+    {"codeEtab":3980,"Dossier":9,"dateAdmission":"03-avr.-95","dateSortie":"08-avr.-95","spécialité":"Orthopédie"},
+    {"codeEtab":3980,"Dossier":7,"dateAdmission":"27-nov.-99","dateSortie":"04-déc.-99","spécialité":"Chirurgie"},
+    {"codeEtab":3980,"Dossier":10,"dateAdmission":"28-avr.-97","dateSortie":"05-mai-97","spécialité":"Chirurgie"},
+    {"codeEtab":4177,"Dossier":3,"dateAdmission":"03-août-01","dateSortie":"05-déc.-01","spécialité":"Médecine"},
+    {"codeEtab":4177,"Dossier":3,"dateAdmission":"02-fév.-02","dateSortie":"23-fév.-02","spécialité":"Orthopédie"},
+    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23-mai-98","dateSortie":"27-mai-98","spécialité":"Orthopédie"},
+    {"codeEtab":8895,"Dossier":10,"dateAdmission":"23-août-98","dateSortie":"27-août-98","spécialité":"Chirurgie"},
+    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23-fév.-98","dateSortie":"27-fév.-98","spécialité":"Orthopédie"}
+    
 ]
 /* variables globales */
-var divEntete, tailleTableau;
+var divEntete, tailleTableau, codeEtablissement, nomEtablissement, posEtabChoisi, specParEtab;
+var enteteTabPatient = '<table class="w3-table-all centrer-tableau mb-md"><tr><th>No. dossier</th><th>Nom</th><th>Prénom</th><th>Date de naissance</th><th>Sexe</th></tr>';
+var enteteTabEtablissement = '<table class="w3-table-all centrer-tableau mb-md"><tr><th> No. &eacute;tablissement</th><th>Nom</th><th>Adresse</th><th>Code Postal</th><th>Téléphone</th></tr>';
+var enteteTabHospitalisations = '<table class="w3-table-all centrer-tableau mb-md"><tr><th> Code &eacute;tablissement</th><th>No. Dossier Patient</th><th>Date arrivée</th><th>Date sortie</th><th>Spécialités</th></tr>';
 
+var ouvrirRangee = "<tr>"
+var fermerRangee = "</tr>"
+var ouvrirCellule = "<td>"
+var fermerCellule = "</td>"
+var fermerTableau = "</table>"
 
 
 /* ---------- Lister les patients ---------- */
 function listerPatients(){
-    var prop, patient, tableauPatient;
+    let prop, patient, tableauPatient;
     effacer();// vider le tableau
     
     //Entête du tableau
@@ -55,15 +66,15 @@ function listerPatients(){
     afficherEntete(divEntete); // affiher la nouvelle entête
 
     //remplir le tableau
-    tableauPatient = '<table class="w3-table-all centrer-tableau"><tr><th>No. dossier</th><th>Nom</th><th>Prénom</th><th>Date de naissance</th><th>Sexe</th></tr>';
+    tableauPatient = enteteTabPatient;
     for (patient of tabPatients) {//pour chaque objet du tableau
-        tableauPatient += "<tr>"; // ajouter une rangée
+        tableauPatient += ouvrirRangee; // ajouter une rangée
         for (prop in patient) { // pour chaque prop dans patient
-            tableauPatient += "<td>" + patient[prop] + "</td>"; //ajouter une cellule au tableau
+            tableauPatient += ouvrirCellule + patient[prop] + fermerCellule; //ajouter une cellule au tableau
         };
-        tableauPatient += "</tr>"; // fermer la rangée
+        tableauPatient += fermerRangee; // fermer la rangée
     }
-    tableauPatient += "</table>"; // fermer le tableau
+    tableauPatient += fermerTableau; // fermer le tableau
     document.getElementById("afficheTableau").innerHTML = tableauPatient; //afficher le tableau
 
     // afficher messages
@@ -76,7 +87,7 @@ function listerPatients(){
 
 /* ---------- Lister les établissements ---------- */
 function listerEtablissements(){
-    var prop, etab, tableauEtablissement;
+    let prop, etab, tableauEtablissement;
     effacer();// vider le tableau
     
     //Entête du tableau
@@ -84,15 +95,15 @@ function listerEtablissements(){
     afficherEntete(divEntete); // affiher la nouvelle entête
 
     //remplir le tableau
-    tableauEtablissement = '<table class="w3-table-all centrer-tableau"><tr><th> No. &eacute;tablissement</th><th>Nom</th><th>Adresse</th><th>Code Postal</th><th>Téléphone</th></tr>';
+    tableauEtablissement = enteteTabEtablissement;
     for (etab of tabEtablissements) { // pour chaque etab dans tabEtablissements
-        tableauEtablissement += "<tr>"; // ajouter une rangée
+        tableauEtablissement += ouvrirRangee; // ajouter une rangée
         for (prop in etab) { // pour chaque prop dans etab
-            tableauEtablissement += "<td>" + etab[prop] + "</td>"; // ajouter une cellule au tableau
+            tableauEtablissement += ouvrirCellule + etab[prop] + fermerCellule; // ajouter une cellule au tableau
         };
-        tableauEtablissement += "</tr>";// fermer la rangée
+        tableauEtablissement += fermerRangee;// fermer la rangée
     };
-    tableauEtablissement += "</table>";// fermer le tableau
+    tableauEtablissement += fermerTableau;// fermer le tableau
     document.getElementById("afficheTableau").innerHTML = tableauEtablissement; //afficher le tableau
 
     // afficher message
@@ -105,7 +116,7 @@ function listerEtablissements(){
 
 /* ---------- Lister les hospitalisations ---------- */
 function listerHospitalisations(){
-    var prop, hospitalisations, tableauHospitalisations;
+    let prop, hospitalisations, tableauHospitalisations;
     effacer();// vider le tableau
     
     //Entête du tableau
@@ -113,15 +124,15 @@ function listerHospitalisations(){
     afficherEntete(divEntete); // affiher la nouvelle entête
 
     // Remplir le tableau des hospitalisations
-    tableauHospitalisations = '<table class="w3-table-all centrer-tableau"><tr><th> Code &eacute;tablissement</th><th>No. Dossier Patient</th><th>Date arrivée</th><th>Date sortie</th><th>Spécialités</th></tr>';
+    tableauHospitalisations = enteteTabHospitalisations;
     for (hospitalisations of tabHospitalisations) { // pour chaque hospitalisations dans le tableau tabHospitalisations
-        tableauHospitalisations += "<tr>"; // ajouter une rangée
+        tableauHospitalisations += ouvrirRangee; // ajouter une rangée
         for (prop in hospitalisations) { // pour chaque prop dans les hospitalisations
-            tableauHospitalisations += "<td>" + hospitalisations[prop] + "</td>"; // ajouter une cellule au tableau
+            tableauHospitalisations += ouvrirCellule + hospitalisations[prop] + fermerCellule; // ajouter une cellule au tableau
         }
-        tableauHospitalisations += "</tr>"; // fermer la rangée
+        tableauHospitalisations += fermerRangee; // fermer la rangée
     }
-    tableauHospitalisations += "</table>"; // fermer le tableau
+    tableauHospitalisations += fermerTableau; // fermer le tableau
     document.getElementById("afficheTableau").innerHTML = tableauHospitalisations; // afficher le tableau dans l'espace prévu
 
     // afficher message
@@ -153,34 +164,34 @@ function selHosParPatients(){
 }
 
 function afficherInfosDuPatient(patientSelect) {
-    var posPatientChoisi = patientSelect.selectedIndex-1;
-    var patientChoisi = tabPatients[posPatientChoisi];
-    var nominParGenre = "";
-    var compteurHospitalisations = 0 ;
-    var tableauParPatient, tableauHospParPatient;
+    let posPatientChoisi = patientSelect.selectedIndex-1;
+    let patientChoisi = tabPatients[posPatientChoisi];
+    let nominParGenre = "";
+    let compteurHospitalisations = 0 ;
+    let tableauParPatient, tableauHospParPatient, dossierPatient, hospPatient, prop;
     
     // afficher les données du patient
-    tableauParPatient = '<table class="w3-table-all centrer-tableau"><tr><th>No. dossier</th><th>Nom</th><th>Prénom</th><th>Date de naissance</th><th>Sexe</th></tr>';
-    tableauParPatient += "<tr>"; // ajouter une rangée
+    tableauParPatient = enteteTabPatient;
+    tableauParPatient += ouvrirRangee; // ajouter une rangée
     for (prop in patientChoisi) { // pour chaque prop dans patient
-        tableauParPatient += "<td>" + patientChoisi[prop] + "</td>"; //ajouter une cellule au tableau
+        tableauParPatient += ouvrirCellule + patientChoisi[prop] + fermerCellule; //ajouter une cellule au tableau
     }
-    tableauParPatient += "</tr></table>"; // fermer la rangée et le tableau
+    tableauParPatient += fermerRangee + fermerTableau; // fermer la rangée et le tableau
 
     // afficher les données d'hospitalisation du patient
     dossierPatient = patientChoisi.Dossier;
-    tableauHospParPatient = '<table class="w3-table-all centrer-tableau"><tr><th> Code &eacute;tablissement</th><th>No. Dossier Patient</th><th>Date arrivée</th><th>Date sortie</th><th>Spécialités</th></tr>';
-    tableauHospParPatient += "<tr>"; // ajouter une rangée
+    tableauHospParPatient = enteteTabHospitalisations;
+    tableauHospParPatient += ouvrirRangee; // ajouter une rangée
     for (hospPatient of tabHospitalisations) { // pour chaque hospitalisations dans le tableau tabHospitalisations
         if (hospPatient.Dossier == dossierPatient){
             compteurHospitalisations++;
             for (prop in hospPatient) { // pour chaque prop dans les hospitalisations
-                tableauHospParPatient += "<td>" + hospPatient[prop] + "</td>"; // ajouter une cellule au tableau
+                tableauHospParPatient += ouvrirCellule + hospPatient[prop] + fermerCellule; // ajouter une cellule au tableau
             }
         }
-        tableauHospParPatient += "</tr>"; // fermer la rangée
+        tableauHospParPatient += fermerRangee; // fermer la rangée
     }
-    tableauHospParPatient += "</table>"; // fermer le tableau
+    tableauHospParPatient += fermerTableau; // fermer le tableau
 
     // déterminer de quel Sexe est le patient pour le nommer correctement
     if (patientChoisi.Sexe == "F"){
@@ -194,7 +205,7 @@ function afficherInfosDuPatient(patientSelect) {
         document.getElementById("afficheTableau").innerHTML = tableauParPatient; // afficher le tableau dans l'espace prévu
         document.getElementById("champStatus").innerHTML = "<span class='rouge'>" + nominParGenre + " " + patientChoisi.Prénom + " " + patientChoisi.Nom + " n'a pas encore été hospitalisé</span>";
     } else {
-        document.getElementById("afficheTableau").innerHTML = tableauParPatient + "<br><br>" + tableauHospParPatient; // afficher le tableau dans l'espace prévu
+        document.getElementById("afficheTableau").innerHTML = tableauParPatient + tableauHospParPatient; // afficher le tableau dans l'espace prévu
         document.getElementById("champStatus").innerHTML = nominParGenre + " " + patientChoisi.Prénom + " " + patientChoisi.Nom + " a été hospitalisé <span class='vert'>" + compteurHospitalisations + " fois</span>"
     }
 }
@@ -204,7 +215,7 @@ function afficherInfosDuPatient(patientSelect) {
 
 /* ---------- Lister les hospitalisations par établissements et par spécialités ---------- */
 function selHosParEtab(){
-    var prop, etab;
+    let etab, selEtab;
     effacer();// vider le tableau
     
     //Entête du tableau
@@ -214,25 +225,84 @@ function selHosParEtab(){
 
     // remplir le sélecteur d'établissements
     document.getElementById("selectEtabSpecialite").className="visible"; // rendre le conteneur div visible
-    var selEtab=document.querySelector('#selectEtablissement');
+    selEtab=document.querySelector('#selectEtablissement');
     selEtab.options.length = 0; // pour vider la liste
     selEtab.options[selEtab.options.length]=new Option("Choisir un établissement");
 	for (etab of tabEtablissements) {
-        selEtab.options[selEtab.options.length]=new Option(etab.codeEtab);
+        selEtab.options[selEtab.options.length]=new Option(etab.codeEtab + " - " + etab.nomEtab);
     }
     
 }
 
-function remplirSpecialites(specialite) {
+function remplirSpecialites(hospitSelect) {
+    let spec, selSpecial, chaineSpec = "", compteurSpecialite = 0;
+    posEtabChoisi = hospitSelect.selectedIndex-1;
+    nomEtablissement = tabEtablissements[posEtabChoisi].nomEtab;
+
+    codeEtablissement = tabEtablissements[posEtabChoisi].codeEtab;
+
     document.getElementById("champStatus").innerHTML = "Choisir ensuite la <span class='vert'>Spécialité</span> à afficher";
     document.getElementById("selectSpecialite").className="visible"; // rendre le select visible
-    var selSpecialite=document.querySelector('#selectSpecialite');
-    selSpecialite.options.length = 0; // pour vider la liste
-    selSpecialite.options[selSpecialite.options.length]=new Option("Choisir une spécialité");
-	for (etab of tabEtablissements) {
-        selEtab.options[selEtab.options.length]=new Option(etab.specialite);
+    
+    // remplir le sélecteur des spécialités
+    selSpecial=document.querySelector('#selectSpecialite');
+    selSpecial.options.length = 0; // pour vider la liste
+    selSpecial.options[selSpecial.options.length]=new Option("Choisir une spécialité");
+    for (prop of tabHospitalisations){
+        if (prop.codeEtab == codeEtablissement){
+            if (!chaineSpec.includes(prop.spécialité)){
+                chaineSpec += prop.spécialité;
+                selSpecial.options[selSpecial.options.length]=new Option(prop.spécialité);
+                compteurSpecialite++;
+            }
+        } 
     }
+    // afficher message
+    if (compteurSpecialite == 0){
+        document.getElementById("champStatus").innerHTML = "Il n'y a eu <span class='rouge'>aucune hospitalisation</span> dans l'établissement " + codeEtablissement + " " + nomEtablissement + ".";
+    } 
 }
+
+function afficherTableauParSpecialites(specialitesSelect) {
+    let specialiteChoisi = specialitesSelect.options[specialitesSelect.selectedIndex].text;
+    alert(specialiteChoisi)
+    let etabChoisi = tabEtablissements[posEtabChoisi];
+    let compteurSpecialite = 0;
+    
+    // manipulation des données du tabEtablissement
+    tableauEtablissement = enteteTabEtablissement;
+    tableauEtablissement += ouvrirRangee; // ajouter une rangée
+    for (prop in etabChoisi) { // pour chaque prop dans patient
+        tableauEtablissement += ouvrirCellule + etabChoisi[prop] + fermerCellule; //ajouter une cellule au tableau
+    }
+    tableauEtablissement += fermerRangee + fermerTableau; // fermer la rangée et le tableau
+
+    // afficher les données d'hospitalisation en rapport à l'établissement et à la spécialité
+    tableauParSpecialite = enteteTabHospitalisations;
+    tableauParSpecialite += ouvrirRangee; // ajouter une rangée
+    for (prop of tabHospitalisations) { // pour chaque hospitalisations dans le tableau tabHospitalisations
+        if (prop.codeEtab == codeEtablissement){
+            if (prop.spécialité == specialiteChoisi){
+                compteurSpecialite++;
+                for (champs in prop) { // pour chaque prop dans les hospitalisations
+                    tableauParSpecialite += ouvrirCellule + prop[champs] + fermerCellule; // ajouter une cellule au tableau
+                }
+            }
+        }
+        tableauParSpecialite += fermerRangee; // fermer la rangée
+    }
+    tableauParSpecialite += fermerTableau; // fermer le tableau
+
+
+
+    // afficher
+    document.getElementById("afficheTableau").innerHTML = tableauEtablissement + tableauParSpecialite; // afficher le tableau dans l'espace prévu
+    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + compteurSpecialite + " hospitalisations</span> à l'établissement <span class='vert'> " + codeEtablissement + " (" + nomEtablissement + ")</span> pour la spécialité <span class='vert'>" + specialiteChoisi + "</span>.";
+
+}
+
+
+
 
 
 
