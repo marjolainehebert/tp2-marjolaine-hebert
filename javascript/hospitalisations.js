@@ -29,7 +29,7 @@ var tabHospitalisations = [
     {"codeEtab":1234,"Dossier":5,"dateAdmission":"14 août 2000","dateSortie":"14 août 2001","spécialité":"Médecine"},
     {"codeEtab":1234,"Dossier":10,"dateAdmission":"12 décembre 1992","dateSortie":"12 décembre 1992","spécialité":"Chirurgie"},
     {"codeEtab":2346,"Dossier":8,"dateAdmission":"03 mars 2003","dateSortie":"05 mars 2003","spécialité":"Médecine"},
-    {"codeEtab":2346,"Dossier":1,"dateAdmission":"11 novwmbre 1997","dateSortie":"12 novembre 1997","spécialité":"Orthopédie"},
+    {"codeEtab":2346,"Dossier":1,"dateAdmission":"11 novembre 1997","dateSortie":"12 novembre 1997","spécialité":"Orthopédie"},
     {"codeEtab":2346,"Dossier":3,"dateAdmission":"12 avril 1995","dateSortie":"30 avril 1995","spécialité":"Médecine"},
     {"codeEtab":3980,"Dossier":5,"dateAdmission":"14 février 2000","dateSortie":"14 mars 2000","spécialité":"Médecine"},
     {"codeEtab":3980,"Dossier":5,"dateAdmission":"01 janvier 2001","dateSortie":"01 février 2001","spécialité":"Médecine"},
@@ -45,9 +45,9 @@ var tabHospitalisations = [
 ]
 /* variables globales */
 var divEntete, tailleTableau, codeEtablissement, nomEtablissement, posEtabChoisi, specParEtab;
-var enteteTabPatient = '<table class="w3-table-all centrer-tableau mb-md"><tr><th>No. dossier</th><th>Nom</th><th>Prénom</th><th>Date de naissance</th><th>Sexe</th></tr>';
-var enteteTabEtablissement = '<table class="w3-table-all centrer-tableau mb-md"><tr><th> No. &eacute;tablissement</th><th>Nom</th><th>Adresse</th><th>Code Postal</th><th>Téléphone</th></tr>';
-var enteteTabHospitalisations = '<table class="w3-table-all centrer-tableau mb-md"><tr><th> Code &eacute;tablissement</th><th>No. Dossier Patient</th><th>Date arrivée</th><th>Date sortie</th><th>Spécialités</th></tr>';
+var enteteTabPatient = '<table class="w3-table-all centrer-tableau mb-md shadow"><tr class="table-header-border"><th>No. dossier</th><th>Nom</th><th>Prénom</th><th>Date de naissance</th><th>Sexe</th></tr>';
+var enteteTabEtablissement = '<table class="w3-table-all centrer-tableau mb-md shadow"><tr class="table-header-border"><th> No. &eacute;tablissement</th><th>Nom</th><th>Adresse</th><th>Code Postal</th><th>Téléphone</th></tr>';
+var enteteTabHospitalisations = '<table class="w3-table-all centrer-tableau mb-md shadow"><tr class="table-header-border"><th> Code &eacute;tablissement</th><th>No. Dossier Patient</th><th>Date arrivée</th><th>Date sortie</th><th>Spécialités</th></tr>';
 
 var ouvrirRangee = "<tr>"
 var fermerRangee = "</tr>"
@@ -81,7 +81,7 @@ function listerPatients(){
 
     // afficher messages
     tailleTableau = tabPatients.length;
-    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + tailleTableau + " patients</span> enregistrés.";
+    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + tailleTableau + " patients</span> enregistrés dans la base de donnée.";
 }
 
 
@@ -139,7 +139,7 @@ function listerHospitalisations(){
 
     // afficher message
     tailleTableau = tabHospitalisations.length; // compter le nombre d'objets dans le tableau
-    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + tailleTableau + " hospitalisations</span> depuis le début de Gestion Hospitalière Hébert.";
+    document.getElementById("champStatus").innerHTML = "Il y a eu <span class='vert'>" + tailleTableau + " hospitalisations</span> depuis le début de Gestion Hospitalière Hébert.";
 }
 
 
@@ -325,7 +325,7 @@ function afficherTableauParSpecialites(specialitesSelect) {
 
     // afficher
     document.getElementById("afficheTableau").innerHTML = tableauEtablissement + tableauParSpecialite; // afficher le tableau dans l'espace prévu
-    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + compteurSpecialite + " hospitalisations</span> à l'établissement <span class='vert'> " + codeEtablissement + " (" + nomEtablissement + ")</span> pour la spécialité <span class='vert'>" + specialiteChoisi + "</span>.";
+    document.getElementById("champStatus").innerHTML = "Il y a eu <span class='vert'>" + compteurSpecialite + " hospitalisations</span> à l'établissement <span class='vert'> " + codeEtablissement + " (" + nomEtablissement + ")</span> pour la spécialité <span class='vert'>" + specialiteChoisi + "</span>.";
 
 }
 
