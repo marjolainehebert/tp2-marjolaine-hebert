@@ -30,7 +30,7 @@ body{
     text-align: center;
     margin:auto;
 }
-/* spaging - margin */
+/* spacing - margin */
 .m-sm{margin-top:1em; margin-bottom:1em;}
 .m-md{margin-top:2em; margin-bottom:2em;}
 .m-lg{margin-top:3em; margin-bottom:3em;}
@@ -41,6 +41,7 @@ body{
 .mt-lg{margin-top:3em;}
 .mt-xl{margin-top:4em;}
 
+.mb-xs{margin-bottom:0.5em;}
 .mb-sm{margin-bottom:1em;}
 .mb-md{margin-bottom:2em;}
 .mb-lg{margin-bottom:3em;}
@@ -61,7 +62,7 @@ body{
 .mr-lg{margin-right:3em;}
 .mr-xl{margin-right:4em;}
 
-/* spaging - padding */
+/* spacing - padding */
 .p-sm{padding-top:1em; padding-bottom:1em;}
 .p-md{padding-top:2em; padding-bottom:2em;}
 .p-lg{padding-top:3em; padding-bottom:3em;}
@@ -89,9 +90,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /* -- couleurs -- */
-.vert {color:green; font-weight:bold;}
-.rouge{color:red; font-weight:bold;}
-
+.vert {color:#0a9381; font-weight:bold;}
+.rouge{color:#b22222; font-weight:bold;}
+.uppercase{text-transform: uppercase;}
 
 
 /* ------------ header ------------ */
@@ -251,6 +252,7 @@ section{
     border-color: #0a9381;
   }
  .invisible{display:none;}
+ .selSpecialVisible{display:inline-block}
  .visible{display:block}
 
 /* ------------ Footer ------------ */

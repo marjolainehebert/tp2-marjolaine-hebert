@@ -1,7 +1,7 @@
 // Tableau d'objets pour les patients  
 var tabPatients = [
     {"Dossier":1,"Nom":"Léger","Prénom":"Émile","Naissance":"26 mars 1917","Sexe":"M"},
-    {"Dossier":2,"Nom":"Bernard","Prénom":"Marie","Naissance":"3 fécrier 1946","Sexe":"F"},
+    {"Dossier":2,"Nom":"Bernard","Prénom":"Marie","Naissance":"3 février 1946","Sexe":"F"},
     {"Dossier":3,"Nom":"Chartrand","Prénom":"Guy","Naissance":"5 avril 1959","Sexe":"M"},
     {"Dossier":4,"Nom":"Côté","Prénom":"André","Naissance":"2 septembre 1978","Sexe":"M"},
     {"Dossier":5,"Nom":"Lavoie","Prénom":"Carole","Naissance":"4 novembre 1973","Sexe":"F"},
@@ -26,21 +26,21 @@ var tabEtablissements = [
 
 // Tableau d'objets pour hospitalisations
 var tabHospitalisations = [
-    {"codeEtab":1234,"Dossier":5,"dateAdmission":"14-août-00","dateSortie":"14-août-01","spécialité":"Médecine"},
-    {"codeEtab":1234,"Dossier":10,"dateAdmission":"12-déc.-92","dateSortie":"12-déc.-92","spécialité":"Chirurgie"},
-    {"codeEtab":2346,"Dossier":8,"dateAdmission":"03-mars-03","dateSortie":"05-mars-03","spécialité":"Médecine"},
-    {"codeEtab":2346,"Dossier":1,"dateAdmission":"11-nov.-97","dateSortie":"12-nov.-97","spécialité":"Orthopédie"},
-    {"codeEtab":2346,"Dossier":3,"dateAdmission":"12-avr.-95","dateSortie":"30-avr.-95","spécialité":"Médecine"},
-    {"codeEtab":3980,"Dossier":5,"dateAdmission":"14-fév.-00","dateSortie":"14-mars-00","spécialité":"Médecine"},
-    {"codeEtab":3980,"Dossier":5,"dateAdmission":"01-jan.-01","dateSortie":"01-fév.-01","spécialité":"Médecine"},
-    {"codeEtab":3980,"Dossier":9,"dateAdmission":"03-avr.-95","dateSortie":"08-avr.-95","spécialité":"Orthopédie"},
-    {"codeEtab":3980,"Dossier":7,"dateAdmission":"27-nov.-99","dateSortie":"04-déc.-99","spécialité":"Chirurgie"},
-    {"codeEtab":3980,"Dossier":10,"dateAdmission":"28-avr.-97","dateSortie":"05-mai-97","spécialité":"Chirurgie"},
-    {"codeEtab":4177,"Dossier":3,"dateAdmission":"03-août-01","dateSortie":"05-déc.-01","spécialité":"Médecine"},
-    {"codeEtab":4177,"Dossier":3,"dateAdmission":"02-fév.-02","dateSortie":"23-fév.-02","spécialité":"Orthopédie"},
-    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23-mai-98","dateSortie":"27-mai-98","spécialité":"Orthopédie"},
-    {"codeEtab":8895,"Dossier":10,"dateAdmission":"23-août-98","dateSortie":"27-août-98","spécialité":"Chirurgie"},
-    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23-fév.-98","dateSortie":"27-fév.-98","spécialité":"Orthopédie"}
+    {"codeEtab":1234,"Dossier":5,"dateAdmission":"14 août 2000","dateSortie":"14 août 2001","spécialité":"Médecine"},
+    {"codeEtab":1234,"Dossier":10,"dateAdmission":"12 décembre 1992","dateSortie":"12 décembre 1992","spécialité":"Chirurgie"},
+    {"codeEtab":2346,"Dossier":8,"dateAdmission":"03 mars 2003","dateSortie":"05 mars 2003","spécialité":"Médecine"},
+    {"codeEtab":2346,"Dossier":1,"dateAdmission":"11 novwmbre 1997","dateSortie":"12 novembre 1997","spécialité":"Orthopédie"},
+    {"codeEtab":2346,"Dossier":3,"dateAdmission":"12 avril 1995","dateSortie":"30 avril 1995","spécialité":"Médecine"},
+    {"codeEtab":3980,"Dossier":5,"dateAdmission":"14 février 2000","dateSortie":"14 mars 2000","spécialité":"Médecine"},
+    {"codeEtab":3980,"Dossier":5,"dateAdmission":"01 janvier 2001","dateSortie":"01 février 2001","spécialité":"Médecine"},
+    {"codeEtab":3980,"Dossier":9,"dateAdmission":"03 avril 1995","dateSortie":"08 avril 1995","spécialité":"Orthopédie"},
+    {"codeEtab":3980,"Dossier":7,"dateAdmission":"27 novembre 1999","dateSortie":"04 décembre 1999","spécialité":"Chirurgie"},
+    {"codeEtab":3980,"Dossier":10,"dateAdmission":"28 avril 1997","dateSortie":"05 mai 1997","spécialité":"Chirurgie"},
+    {"codeEtab":4177,"Dossier":3,"dateAdmission":"03 août 2001","dateSortie":"05 décembre 2001","spécialité":"Médecine"},
+    {"codeEtab":4177,"Dossier":3,"dateAdmission":"02 février 2002","dateSortie":"23 février 2002","spécialité":"Orthopédie"},
+    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23 mai 1998","dateSortie":"27 mai 1998","spécialité":"Orthopédie"},
+    {"codeEtab":8895,"Dossier":10,"dateAdmission":"23 août 1998","dateSortie":"27 août 1998","spécialité":"Chirurgie"},
+    {"codeEtab":7306,"Dossier":2,"dateAdmission":"23 février 1998","dateSortie":"27 fév. 1998","spécialité":"Orthopédie"}
     
 ]
 /* variables globales */
@@ -55,6 +55,8 @@ var ouvrirCellule = "<td>"
 var fermerCellule = "</td>"
 var fermerTableau = "</table>"
 
+var d = new Date();
+var n = d.getFullYear();
 
 /* ---------- Lister les patients ---------- */
 function listerPatients(){
@@ -137,15 +139,17 @@ function listerHospitalisations(){
 
     // afficher message
     tailleTableau = tabHospitalisations.length; // compter le nombre d'objets dans le tableau
-    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + tailleTableau + " hospitalisations</span> depuis le début.";
+    document.getElementById("champStatus").innerHTML = "Il y a <span class='vert'>" + tailleTableau + " hospitalisations</span> depuis le début de Gestion Hospitalière Hébert.";
 }
 
 
 
 
-/* ---------- Lister les hospitalisations par patient ---------- */
+/* ---------- Lister les hospitalisations par patient  ---------- */
+/* remplir le sélecteur patient */
 function selHosParPatients(){
-
+    let selPatient=document.querySelector('#selectPatient');
+    let patient;
     effacer();// vider le tableau
     
     //Entête du tableau
@@ -154,7 +158,7 @@ function selHosParPatients(){
 
     // remplir le sélecteur de patients
     document.getElementById("selectionPatient").className="visible"; // rendre le conteneur div visible
-    var selPatient=document.querySelector('#selectPatient');
+    
     selPatient.options.length = 0; // pour vider la liste
     document.getElementById("champStatus").innerHTML = "Choisir le <span class='vert'>Code Patient</span> pour afficher toutes ses hospitalisations";
     selPatient.options[selPatient.options.length]=new Option("Choisir un patient");
@@ -163,12 +167,16 @@ function selHosParPatients(){
 	}
 }
 
+/* Afficher les attributs du patient sélectionné dans des tableaux */
 function afficherInfosDuPatient(patientSelect) {
     let posPatientChoisi = patientSelect.selectedIndex-1;
     let patientChoisi = tabPatients[posPatientChoisi];
     let nominParGenre = "";
     let compteurHospitalisations = 0 ;
-    let tableauParPatient, tableauHospParPatient, dossierPatient, hospPatient, prop;
+    let compteurSpecialite = 0 ;
+    let listeSpecialite = "";
+    let categoriePatient = "";
+    let tableauParPatient, tableauHospParPatient, dossierPatient, hospPatient, prop, agePatient, anneeNaissance;
     
     // afficher les données du patient
     tableauParPatient = enteteTabPatient;
@@ -187,6 +195,15 @@ function afficherInfosDuPatient(patientSelect) {
             compteurHospitalisations++;
             for (prop in hospPatient) { // pour chaque prop dans les hospitalisations
                 tableauHospParPatient += ouvrirCellule + hospPatient[prop] + fermerCellule; // ajouter une cellule au tableau
+                if (hospPatient[prop] == hospPatient.spécialité){
+                    if (!listeSpecialite.includes(hospPatient.spécialité)){
+                        compteurSpecialite++
+                        if (compteurSpecialite > 1){ //si il y en a plus que un, ajouter une virgule entre
+                            listeSpecialite += ", "
+                        }
+                        listeSpecialite += hospPatient.spécialité;
+                    }
+                }
             }
         }
         tableauHospParPatient += fermerRangee; // fermer la rangée
@@ -199,14 +216,21 @@ function afficherInfosDuPatient(patientSelect) {
     } else {
         nominParGenre = "Le patient";
     }
+    // Déterminer l'âge du patient
+    anneeNaissance = patientChoisi.Naissance; // aller chercher la chaîne de caractère de la date de naissance
+    anneeNaissance = anneeNaissance.replace(/.(?=.{4})/g, ''); // garder seulement les 4 derniers caractères pour obtenir l'année de naissance
+    agePatient = n - parseInt(anneeNaissance); // calculer l'âge du patient
+    if (agePatient >= 70){  // si le patient a plus de 70 ans ajouter un message d'alerte
+        categoriePatient = "<br><span class='text-center mb-sm rouge uppercase'>Attention, " + nominParGenre + " a " + agePatient + " ans.</span> Les personnes âgées sont plus à risque de développer des complications.</span></span>";
+    }
 
     // afficher message et le tableau
-    if (compteurHospitalisations == 0){
+    if (compteurHospitalisations == 0){ // si il n'y a eu aucune hospitalisation
         document.getElementById("afficheTableau").innerHTML = tableauParPatient; // afficher le tableau dans l'espace prévu
-        document.getElementById("champStatus").innerHTML = "<span class='rouge'>" + nominParGenre + " " + patientChoisi.Prénom + " " + patientChoisi.Nom + " n'a pas encore été hospitalisé</span>";
+        document.getElementById("champStatus").innerHTML = "<span class='rouge'>" + nominParGenre + " " + patientChoisi.Prénom + " " + patientChoisi.Nom + " n'a pas encore été hospitalisé.</span>" + categoriePatient;
     } else {
         document.getElementById("afficheTableau").innerHTML = tableauParPatient + tableauHospParPatient; // afficher le tableau dans l'espace prévu
-        document.getElementById("champStatus").innerHTML = nominParGenre + " " + patientChoisi.Prénom + " " + patientChoisi.Nom + " a été hospitalisé <span class='vert'>" + compteurHospitalisations + " fois</span>"
+        document.getElementById("champStatus").innerHTML = nominParGenre + " <span class='vert'>" + patientChoisi.Prénom + " " + patientChoisi.Nom + "</span> a été hospitalisé <span class='vert'>" + compteurHospitalisations + " fois</span> (" + listeSpecialite + ")." + categoriePatient;
     }
 }
 
@@ -214,6 +238,7 @@ function afficherInfosDuPatient(patientSelect) {
 
 
 /* ---------- Lister les hospitalisations par établissements et par spécialités ---------- */
+/* remplir le sélecteur Établissement */
 function selHosParEtab(){
     let etab, selEtab;
     effacer();// vider le tableau
@@ -225,47 +250,50 @@ function selHosParEtab(){
 
     // remplir le sélecteur d'établissements
     document.getElementById("selectEtabSpecialite").className="visible"; // rendre le conteneur div visible
-    selEtab=document.querySelector('#selectEtablissement');
+    selEtab=document.querySelector('#selectEtablissement'); // aller chercher le sélecteur et le mettre dans une variable
     selEtab.options.length = 0; // pour vider la liste
-    selEtab.options[selEtab.options.length]=new Option("Choisir un établissement");
-	for (etab of tabEtablissements) {
+    selEtab.options[selEtab.options.length]=new Option("Choisir un établissement"); // ajouter texte à la première option du sélect
+	for (etab of tabEtablissements) { // pour chaque propriété dans le tableau Etablissement, ajouter dans la liste déroulante le code de l'établissement et le nom de l'établissement
         selEtab.options[selEtab.options.length]=new Option(etab.codeEtab + " - " + etab.nomEtab);
     }
     
 }
 
+/* remplir le sélecteur des spécialités */
 function remplirSpecialites(hospitSelect) {
-    let spec, selSpecial, chaineSpec = "", compteurSpecialite = 0;
+    let selSpecial, chaineSpec = "", compteurSpecialite = 0;
     posEtabChoisi = hospitSelect.selectedIndex-1;
     nomEtablissement = tabEtablissements[posEtabChoisi].nomEtab;
 
     codeEtablissement = tabEtablissements[posEtabChoisi].codeEtab;
-
-    document.getElementById("champStatus").innerHTML = "Choisir ensuite la <span class='vert'>Spécialité</span> à afficher";
-    document.getElementById("selectSpecialite").className="visible"; // rendre le select visible
+    document.getElementById("afficheTableau").innerHTML="";  // vider l'espace
+    document.getElementById("champStatus").innerHTML = "Choisir ensuite la <span class='vert'>Spécialité</span> à afficher"; // afficher les instructions
+    document.getElementById("selectSpecialite").className="selSpecialVisible"; // rendre le select visible
     
     // remplir le sélecteur des spécialités
     selSpecial=document.querySelector('#selectSpecialite');
     selSpecial.options.length = 0; // pour vider la liste
-    selSpecial.options[selSpecial.options.length]=new Option("Choisir une spécialité");
-    for (prop of tabHospitalisations){
-        if (prop.codeEtab == codeEtablissement){
-            if (!chaineSpec.includes(prop.spécialité)){
-                chaineSpec += prop.spécialité;
-                selSpecial.options[selSpecial.options.length]=new Option(prop.spécialité);
-                compteurSpecialite++;
+    selSpecial.options[selSpecial.options.length]=new Option("Choisir une spécialité"); // ajouter texte à la première option du sélect
+    
+    for (prop of tabHospitalisations){ // pour chaque propriété dans la tabHospitalisation
+        if (prop.codeEtab == codeEtablissement){ //si la propriété codeEtab est de la même valeur que celui sélectionné dans le sélecteur d'établissement
+            if (!chaineSpec.includes(prop.spécialité)){ // si la propriété spécialité ne se retrouve pas déjà dans la liste
+                chaineSpec += prop.spécialité; // ajouter la propriété dans une variable pour faire la validation
+                selSpecial.options[selSpecial.options.length]=new Option(prop.spécialité); // ajouter la spécialité dans le sélecteur
+                compteurSpecialite++; // incrémenter le compteur de spécialité
             }
         } 
     }
     // afficher message
-    if (compteurSpecialite == 0){
-        document.getElementById("champStatus").innerHTML = "Il n'y a eu <span class='rouge'>aucune hospitalisation</span> dans l'établissement " + codeEtablissement + " " + nomEtablissement + ".";
-    } 
+    if (compteurSpecialite == 0){ // si il n'y a pas de spécialité pour cet établissement, afficher le message
+        document.getElementById("champStatus").innerHTML = "Il n'y a eu <span class='rouge'>aucune hospitalisation</span> dans l'établissement <span class='rouge'>" + codeEtablissement + " (" + nomEtablissement + ")</span>.";
+        document.getElementById("selectSpecialite").className="invisible"; // rendre le div du sélecteur invisible
+    }
+
 }
 
 function afficherTableauParSpecialites(specialitesSelect) {
-    let specialiteChoisi = specialitesSelect.options[specialitesSelect.selectedIndex].text;
-    alert(specialiteChoisi)
+    let specialiteChoisi = specialitesSelect.options[specialitesSelect.selectedIndex].text; // mettre le texte du sélecteur dans une variable
     let etabChoisi = tabEtablissements[posEtabChoisi];
     let compteurSpecialite = 0;
     
@@ -309,7 +337,7 @@ function afficherTableauParSpecialites(specialitesSelect) {
 
 /* ---------- vider la section tableau ---------- */
 function effacer(){
-    document.getElementById("afficheTableau").innerHTML = ""; // vider l'espace d'affichage
+    document.getElementById("afficheTableau").innerHTML=""; // vider l'espace d'affichage
     document.getElementById("entete").className="invisible"; // rendre l'entête invisible
     document.getElementById("selectionPatient").className="invisible"; // rendre le div du sélecteur invisible
     document.getElementById("selectEtabSpecialite").className="invisible"; // rendre le div du sélecteur invisible

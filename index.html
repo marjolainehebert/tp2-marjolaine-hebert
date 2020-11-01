@@ -18,6 +18,7 @@
 
     <body>
         <div id="content">
+            <!-- l'entête -->
             <header>
                 <div class="logo">
                     <span class="coeurRouge"><i class="fas fa-heartbeat"></i></span>
@@ -30,41 +31,43 @@
                 </div>
             </header>
             
+            <!-- La navigation -->
             <nav id="navbar" class="navbar">
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="javascript:;" onclick="listerPatients()">
-                                <div class="nav-icon"><i class="fas fa-hospital-user"></i></div>
+                                <div class="nav-icon mb-xs"><i class="fas fa-hospital-user"></i></div>
                                 <div class="nav-texte">Liste des patients</div>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" onclick="listerEtablissements()">
-                                <div class="nav-icon"><i class="far fa-hospital"></i> </div>
+                                <div class="nav-icon mb-xs"><i class="far fa-hospital"></i> </div>
                                 <div class="nav-texte">Liste des établissements</div>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" onclick="listerHospitalisations()">
-                                <div class="nav-icon"><i class="fas fa-ambulance"></i></div>
+                                <div class="nav-icon mb-xs"><i class="fas fa-ambulance"></i></div>
                                 <div class="nav-texte">Liste des hospitalisations</div>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" onclick="selHosParPatients()">
-                                <div class="nav-icon"><i class="fas fa-procedures"></i> </div>
+                                <div class="nav-icon mb-xs"><i class="fas fa-procedures"></i> </div>
                                 <div class="nav-texte">Hospitalisation par patients</div>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" onclick="selHosParEtab()">
-                                <div class="nav-icon"><i class="fas fa-clinic-medical"></i></div>
+                                <div class="nav-icon mb-xs"><i class="fas fa-clinic-medical"></i></div>
                                 <div class="nav-texte">Hospitalisation par établissement et par spécialité</div>
                             </a>
                         </li>
                   </ul>
             </nav>
 
+            <!-- Le contenu -->
             <section>
                 <div id="entete" class="invisible">
                     <div class="entete mb-md">
@@ -82,14 +85,15 @@
                 <div id="selectionPatient" class="invisible">
                     <div class="align-center mb-md">
                         <h5>Sélectionnez un patient</h5>
-                        <select id="selectPatient" class="align-center" onchange="afficherInfosDuPatient(this)"></select>
+                        <select id="selectPatient" name="selectPatient" class="align-center" onchange="afficherInfosDuPatient(this)"></select>
                     </div>
                 </div>
-
+                <!-- Select hospitalisations par établissement et par spécialité-->
                 <div id="selectEtabSpecialite" class="invisible">
                     <div class="align-center mb-md">
-                        <select id="selectEtablissement" class="mr-lg ml-lg" onchange="remplirSpecialites(this)"></select>
-                        <select id="selectSpecialite" class="invisible" onchange="afficherTableauParSpecialites(this)"></select>
+                        <h5>Sélectionnez un établissement</h5>
+                        <select id="selectEtablissement" name="selectEtablissement" class="mr-lg ml-lg mb-md" onchange="remplirSpecialites(this)"></select>
+                        <select id="selectSpecialite" name="selectSpecialite" class="invisible" onchange="afficherTableauParSpecialites(this)"></select>
                     </div>
                 </div>
 
@@ -98,6 +102,7 @@
                 
             </section>
 
+            <!-- Affichage des messages au bas -->
             <footer>
                 <div class="status"><h6>Messages</h6></div>
                 <div id="champStatus">Messages importants</div>
